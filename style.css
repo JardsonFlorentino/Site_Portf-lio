@@ -456,7 +456,7 @@ h1, h2, h3 {
 .footer-container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 1.75rem 2.5rem 1rem;
+  padding: 1em 1rem 2rem;
   display: flex;
   gap: 2rem;
   align-items: center;
@@ -472,6 +472,7 @@ h1, h2, h3 {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  
 }
 
 .footer-logo {
@@ -532,12 +533,15 @@ h1, h2, h3 {
 /* DIREITA: links rápidos */
 .footer-right {
   text-align: center;
+  margin-top: 10px;
+
 }
 
 .footer-right h3 {
   font-size: 1rem;
   margin-bottom: 0.5rem;
   color: #e5e7eb;
+  margin-left: 220px;
 }
 
 .footer-links-col {
@@ -545,6 +549,7 @@ h1, h2, h3 {
   flex-direction: column;
   gap: 0.4rem;
   align-items: flex-center;
+  margin-left: 230px;
 }
 
 .footer-links-col a {
@@ -661,20 +666,38 @@ h1, h2, h3 {
     flex-direction: column;
   }
 
+  @media (max-width: 768px) {
+  ...
+
   .footer-container {
     flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
+    
+    text-align: center;
+  }
+
+  .footer-left {
+    align-items: center;   /* logo + redes no centro */
+  }
+
+  .footer-social-links {
+    justify-content: center;
+    margin-left: 0;
   }
 
   .footer-center {
-    text-align: left;
+    text-align: center;
   }
 
   /* esconder links rápidos no mobile */
   .footer-right {
     display: none;
   }
+
+  .whatsapp-text {
+    display: none;
+  }
+}
+
 
   .whatsapp-text {
     display: none;
