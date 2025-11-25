@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Jardson Florentino | Dev Full-Stack</title>
+    <link rel="icon" href="./assets/logo-jardson.png" type="image/png">
+
+    <meta name="description"
+        content="Portfólio de Jardson Florentino, Desenvolvedor Full-Stack. Projetos em React, TypeScript, Node.js, Tailwind CSS e mais." />
+
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="container-header-wrapper">
+            <a href="#inicio" class="logo-link" aria-label="Voltar ao início">
+                <img src="./assets/logo-jardson.png" alt="Logo Jardson Florentino - Dev Full-Stack"
+                    class="logo-image" />
+            </a>
+
+            <nav class="main-nav" aria-label="Menu principal">
+                <button id="hamburger-btn" aria-label="Abrir menu de navegação" aria-expanded="false"
+                    aria-controls="nav-menu">
+                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                </button>
+
+                <div id="nav-menu" class="nav-menu">
+                    <ul class="nav-list">
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#projetos">Projetos</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                    <a href="#contato" class="btn-primary">Contrate-me</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section id="inicio" class="hero-container" aria-labelledby="hero-heading">
+            <div class="hero-content">
+                <h1 id="hero-heading">
+                    Oi, sou Jardson Florentino, Desenvolvedor Full-Stack.
+                </h1>
+
+                <p class="hero-subtext">
+                    Crio aplicações web modernas e escaláveis, focadas em desempenho,
+                    experiência do usuário e resultado real para negócios.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#projetos" class="btn-primary pulse">Ver projetos</a>
+                    <a href="#contato" class="btn-secondary">Contrate-me</a>
+                    <a href="./assets/Currículo_JARDSON_FLORENTINO.pdf" class="btn-outline pulse" target="_blank"
+                        rel="noopener noreferrer">
+                        Download CV
+                    </a>
+                </div>
+
+                <div class="hero-info">
+                    <span><i class="fa-solid fa-location-dot"></i> Maragogi - AL, Brasil</span>
+                    <span><i class="fa-brands fa-github"></i> /JardsonFlorentino</span>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <!-- Trocar pela sua foto -->
+                <img src="./assets/jardson-foto.jpg" alt="Foto de Jardson Florentino" loading="lazy" />
+            </div>
+        </section>
+
+        <!-- SOBRE -->
+        <section id="sobre" class="about-container scroll-reveal">
+            <h2>Sobre</h2>
+
+            <div class="about-section">
+                <div class="about-text">
+                    <p>
+                        Desenvolvedor Full Stack, focado em criar aplicações web eficientes, escaláveis e voltadas para
+                        resultados reais.
+                    </p>
+                    <p>
+                        Atuo com desenvolvimento Full Stack pela DevClub, construindo projetos práticos que unem boa
+                        arquitetura, organização e atenção a detalhes. Meu foco é entregar produtos digitais que
+                        resolvem problemas de verdade, com excelente experiência do usuário e qualidade técnica.
+                    </p>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJETOS -->
+        <section id="projetos" class="projects-container scroll-reveal">
+            <h2>Projetos em destaque</h2>
+
+            <div class="projects-grid">
+                <!-- DevBurger -->
+                <article class="project-card">
+                    <div class="project-thumb">
+                        <img src="./assets/devburger.webp" alt="DevBurger - fluxo de pedidos" loading="lazy" />
+                    </div>
+                    <h3>DevBurger</h3>
+                    <p>
+                        Aplicação de pedidos de hamburgueria com fluxo completo de compra
+                        e foco em usabilidade.
+                    </p>
+                    <ul class="project-tags">
+                        <li>React</li>
+                        <li>JavaScript</li>
+                        <li>CSS</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="#" target="_blank" rel="noopener noreferrer">Ver projeto</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">Código</a>
+                    </div>
+                </article>
+
+                <!-- ControleJá -->
+                <article class="project-card">
+                    <div class="project-thumb">
+                        <img src="./assets/projects/controleja.webp" alt="ControleJá - controle financeiro"
+                            loading="lazy" />
+                    </div>
+                    <h3>ControleJá</h3>
+                    <p>
+                        Plataforma simples para controle de despesas e receitas, com visão
+                        clara das finanças pessoais.
+                    </p>
+                    <ul class="project-tags">
+                        <li>React</li>
+                        <li>TypeScript</li>
+                        <li>Tailwind CSS</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="#" target="_blank" rel="noopener noreferrer">Ver projeto</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">Código</a>
+                    </div>
+                </article>
+
+                <!-- Nutricionista -->
+                <article class="project-card">
+                    <div class="project-thumb">
+                        <img src="./assets/nutricionista.webp" alt="Site Nutricionista" loading="lazy" />
+                    </div>
+                    <h3>Site Nutricionista</h3>
+                    <p>
+                        Site institucional para nutricionista com foco em conversão de leads
+                        e comunicação clara.
+                    </p>
+                    <ul class="project-tags">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://jardsonflorentino.github.io/Site-nutricionista-stephane/" target="_blank"
+                            rel="noopener noreferrer">Ver projeto</a>
+                        <a href="https://github.com/JardsonFlorentino/Site-nutricionista-stephane" target="_blank"
+                            rel="noopener noreferrer">Código</a>
+                    </div>
+                </article>
+
+                <!-- Passeios de Lanchas -->
+                <article class="project-card">
+                    <div class="project-thumb">
+                        <img src="./assets/projects/lancha.webp" alt="Landing page Passeios de Lanchas"
+                            loading="lazy" />
+                    </div>
+                    <h3>Passeios de Lanchas</h3>
+                    <p>
+                        Landing page para empresa de passeios de lancha, destacando serviços,
+                        diferenciais e contato rápido.
+                    </p>
+                    <ul class="project-tags">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="#" target="_blank" rel="noopener noreferrer">Ver projeto</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">Código</a>
+                    </div>
+                </article>
+
+                <!-- E-commerce -->
+                <article class="project-card">
+                    <div class="project-thumb">
+                        <img src="./assets/projects/ecommerce.webp" alt="E-commerce T-shirts e Pijamas"
+                            loading="lazy" />
+                    </div>
+                    <h3>E-commerce T-Shirts &amp; Pijamas</h3>
+                    <p>
+                        Loja virtual para venda de camisetas e pijamas, com catálogo organizado
+                        e foco na experiência de compra.
+                    </p>
+                    <ul class="project-tags">
+                        <li>React</li>
+                        <li>TypeScript</li>
+                        <li>API</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="#" target="_blank" rel="noopener noreferrer">Ver projeto</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">Código</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills" class="skills-container scroll-reveal">
+            <h2>Skills</h2>
+
+            <div class="skills-section">
+                <h3>Frontend</h3>
+                <div class="skills-badges">
+                    <img src="https://img.shields.io/badge/react-20232A?style=flat-square&logo=react&logoColor=61DAFB"
+                        alt="React" />
+                    <img src="https://img.shields.io/badge/html5-E34F26?style=flat-square&logo=html5&logoColor=white"
+                        alt="HTML5" />
+                    <img src="https://img.shields.io/badge/css3-1572B6?style=flat-square&logo=css3&logoColor=white"
+                        alt="CSS3" />
+                    <img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"
+                        alt="JavaScript" />
+                    <img src="https://img.shields.io/badge/typescript-3178C6?style=flat-square&logo=typescript&logoColor=white"
+                        alt="TypeScript" />
+                    <img src="https://img.shields.io/badge/tailwindcss-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white"
+                        alt="Tailwind CSS" />
+                </div>
+            </div>
+
+            <div class="skills-section">
+                <h3>Backend</h3>
+                <div class="skills-badges">
+                    <img src="https://img.shields.io/badge/node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white"
+                        alt="Node.js" />
+                    <img src="https://img.shields.io/badge/express.js-404D59?style=flat-square&logo=express&logoColor=white"
+                        alt="Express.js" />
+                    <img src="https://img.shields.io/badge/api%20rest-005571?style=flat-square" alt="APIs REST" />
+                    <img src="https://img.shields.io/badge/postgresql-316192?style=flat-square&logo=postgresql&logoColor=white"
+                        alt="PostgreSQL" />
+                    <img src="https://img.shields.io/badge/mongodb-47A248?style=flat-square&logo=mongodb&logoColor=white"
+                        alt="MongoDB" />
+                    <img src="https://img.shields.io/badge/prisma-3982CE?style=flat-square&logo=prisma&logoColor=white"
+                        alt="Prisma" />
+                </div>
+            </div>
+
+            <div class="skills-section">
+                <h3>DevOps &amp; Ferramentas</h3>
+                <div class="skills-badges">
+                    <img src="https://img.shields.io/badge/git-F05033?style=flat-square&logo=git&logoColor=white"
+                        alt="Git" />
+                    <img src="https://img.shields.io/badge/github-181717?style=flat-square&logo=github&logoColor=white"
+                        alt="GitHub" />
+                    <img src="https://img.shields.io/badge/docker-2496ED?style=flat-square&logo=docker&logoColor=white"
+                        alt="Docker" />
+                    <img src="https://img.shields.io/badge/VS%20Code-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white"
+                        alt="VS Code" />
+                    <img src="https://img.shields.io/badge/figma-F24E1E?style=flat-square&logo=figma&logoColor=white"
+                        alt="Figma" />
+                    <img src="https://img.shields.io/badge/n8n-EF7B4D?style=flat-square&logo=n8n&logoColor=white"
+                        alt="N8N" />
+                    <img src="https://img.shields.io/badge/yarn-2C8EBB?style=flat-square&logo=yarn&logoColor=white"
+                        alt="Yarn" />
+                    <img src="https://img.shields.io/badge/npm-CB3837?style=flat-square&logo=npm&logoColor=white"
+                        alt="npm" />
+                    <img src="https://img.shields.io/badge/portainer-13BEF9?style=flat-square&logo=portainer&logoColor=white"
+                        alt="Portainer" />
+                    <img src="https://img.shields.io/badge/easypanel-6EC7FA?style=flat-square" alt="Easypanel" />
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTATO -->
+        <section id="contato" class="contact-container scroll-reveal">
+            <h2>Contato</h2>
+            <p class="contact-intro">
+                Fale sobre sua necessidade e retorno assim que possível.
+            </p>
+
+            <form id="contact-form" class="contact-form" novalidate>
+                <div class="input-group">
+                    <label for="input-name">Nome completo</label>
+                    <input type="text" id="input-name" name="name" required placeholder="Nome Completo" />
+                </div>
+
+                <div class="input-group">
+                    <label for="input-email">E-mail</label>
+                    <input type="email" id="input-email" name="email" required placeholder="Seu e-mail" />
+                </div>
+
+                <div class="input-group">
+                    <label for="input-message">Mensagem</label>
+                    <textarea id="input-message" name="message" rows="4" required
+                        placeholder="Conte um pouco do seu projeto ou oportunidade..."></textarea>
+                </div>
+
+                <button type="submit" id="submit-btn" class="btn-primary pulse">
+                    Enviar mensagem
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- ESQUERDA: logo + tagline + redes -->
+            <div class="footer-column footer-left">
+                <img src="./assets/logo-jardson.png" alt="Logo Jardson Florentino" class="footer-logo" />
+                <div class="footer-social-links" aria-label="Redes sociais">
+                    <a href="https://wa.me/5581986438384" target="_blank" rel="noopener" aria-label="WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/jardsonflorentino" target="_blank" rel="noopener"
+                        aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/JardsonFlorentino" target="_blank" rel="noopener" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- MEIO: e-mail + disponibilidade -->
+            <div class="footer-column footer-center">
+                <p class="footer-email">
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:jardsonflorentino@gmail.com">jardsonflorentino@gmail.com</a>
+                </p>
+                <p class="footer-availability">
+                    Desenvolvedor Full-Stack focado em aplicações web modernas e orientadas a resultado.
+                </p>
+            </div>
+
+            <!-- DIREITA: links rápidos (desktop apenas) -->
+            <div class="footer-column footer-right">
+                <h3>Links rápidos</h3>
+                <nav aria-label="Links do rodapé" class="footer-links-col">
+                    <a href="#inicio">Início</a>
+                    <a href="#sobre">Sobre</a>
+                    <a href="#projetos">Projetos</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#contato">Contato</a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Jardson Florentino. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLUTUANTE -->
+    <div class="whatsapp-widget">
+
+        <a href="https://wa.me/5581986438384" class="whatsapp-button" target="_blank" rel="noopener noreferrer"
+            aria-label="Falar no WhatsApp"
+            data-whats-message="Olá Jardson! Vi seu portfólio e gostaria de falar sobre um projeto ou oportunidade.">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+        </a>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
