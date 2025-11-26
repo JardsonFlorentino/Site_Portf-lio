@@ -1,117 +1,121 @@
-// Número de WhatsApp em formato internacional (sem +, parênteses ou traços)
-const WHATSAPP_NUMBER = '5581986438384';
+const WHATSAPP_NUMBER = "5581986438384";
 
-// Monta URL de WhatsApp "click to chat" com mensagem pré-preenchida
+const $ = (selector) => document.querySelector(selector);
+const $$ = (selector) => document.querySelectorAll(selector);
+
+
 function buildWhatsAppUrl(message) {
-  const encodedMessage = encodeURIComponent(message);
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
-/* MENU MOBILE */
+function openWhatsApp(message) {
+  const url = buildWhatsAppUrl(message);
+  window.open(url, "_blank")?.focus();
+}
+
 function initMobileMenu() {
-  const btn = document.getElementById('hamburger-btn');
-  const navMenu = document.getElementById('nav-menu');
+  const btn = $("#hamburger-btn");
+  const navMenu = $("#nav-menu");
   if (!btn || !navMenu) return;
 
-  btn.addEventListener('click', () => {
-    navMenu.classList.toggle('open');
-    const expanded = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', String(!expanded));
+  btn.addEventListener("click", () => {
+    const isOpen = navMenu.classList.toggle("open");
+    btn.setAttribute("aria-expanded", isOpen);
   });
 
-  navMenu.addEventListener('click', (event) => {
-    const target = event.target;
-    if (target.tagName === 'A') {
-      navMenu.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
+  navMenu.addEventListener("click", (e) => {
+    if (e.target.tagName === "A") {
+      navMenu.classList.remove("open");
+      btn.setAttribute("aria-expanded", "false");
     }
   });
 }
 
-/* BOTÕES WHATSAPP (flutuante ou outros com data-whats-message) */
-function initWhatsAppButtons() {
-  const buttons = document.querySelectorAll('[data-whats-message]');
-  if (!buttons.length) return;
 
-  buttons.forEach((btn) => {
-    btn.addEventListener('click', (event) => {
-      event.preventDefault();
+
+function initWhatsAppButtons() {
+  $$(".whatsapp-button, [data-whats-message]").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
       const msg =
-        btn.getAttribute('data-whats-message') ||
-        'Olá Jardson! Gostaria de falar sobre um projeto ou oportunidade.';
-      const url = buildWhatsAppUrl(msg);
-      window.open(url, '_blank')?.focus();
+        btn.dataset.whatsMessage ||
+        "Olá Jardson! Gostaria de falar sobre um projeto ou oportunidade.";
+      openWhatsApp(msg);
     });
   });
 }
 
-/* FORMULÁRIO DE CONTATO */
+
+
 function initContactForm() {
-  const form = document.getElementById('contact-form');
+  const form = $("#contact-form");
   if (!form) return;
 
-  const nameInput = document.getElementById('input-name');
-  const emailInput = document.getElementById('input-email');
-  const messageInput = document.getElementById('input-message');
+  const nameInput = $("#input-name");
+  const emailInput = $("#input-email");
+  const messageInput = $("#input-message");
 
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
 
     const name = nameInput.value.trim();
     const email = emailInput.value.trim();
     const message = messageInput.value.trim();
 
     if (!name || !email || !message) {
-      alert('Por favor, preencha nome, e-mail e mensagem.');
-      return;
+      return alert("Por favor, preencha todos os campos.");
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      alert('Por favor, informe um e-mail válido.');
-      return;
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      return alert("Por favor, informe um e-mail válido.");
     }
 
-    const fullMessage =
-      `Olá Jardson!` +
-      `\n\nNome: ${name}` +
-      `\nE-mail: ${email}` +
-      `\n\nMensagem:\n${message}`;
+    const fullMessage = `
+Olá Jardson!
 
-    const url = buildWhatsAppUrl(fullMessage);
-    window.open(url, '_blank')?.focus();
+Nome: ${name}
+E-mail: ${email}
+
+Mensagem:
+${message}
+    `.trim();
+
+    openWhatsApp(fullMessage);
     form.reset();
   });
 }
 
-/* SCROLL REVEAL */
+
+
 function initScrollReveal() {
-  const elements = document.querySelectorAll('.scroll-reveal');
+  const elements = $$(".scroll-reveal");
   if (!elements.length) return;
 
-  if (!('IntersectionObserver' in window)) {
-    elements.forEach((el) => el.classList.add('active'));
+  if (!("IntersectionObserver" in window)) {
+    elements.forEach((el) => el.classList.add("active"));
     return;
   }
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {       
-        entry.target.classList.add('active');
-          } else {        
-        entry.target.classList.remove('active');
-      }
-    });
-  }, {
-    threshold: 0.15,
-    rootMargin: '0px 0px -10% 0px'
-  });
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          obs.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.15,
+      rootMargin: "0px 0px -5% 0px",
+    }
+  );
 
   elements.forEach((el) => observer.observe(el));
 }
 
-/* INICIALIZAÇÃO GERAL */
-document.addEventListener('DOMContentLoaded', () => {
+
+document.addEventListener("DOMContentLoaded", () => {
   initMobileMenu();
   initWhatsAppButtons();
   initContactForm();
